@@ -18,11 +18,6 @@ import struct
 from micropython import const
 from micropython_mpl3115a2.i2c_helpers import CBits, RegisterStruct
 
-try:
-    from typing import Tuple
-except ImportError:
-    pass
-
 
 __version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/jposada202020/MicroPython_MPL3115A2.git"
@@ -141,7 +136,7 @@ class MPL3115A2:
         self._oversample_ratio = value
 
     @property
-    def pressure(self):
+    def pressure(self) -> float:
         """
         Read the barometric pressure detected by the sensor in Hectopascals.
         """
@@ -161,7 +156,7 @@ class MPL3115A2:
 
         return pressure / 400.0
 
-    def _poll_reg1(self):
+    def _poll_reg1(self) -> None:
         """
         Poll the ost_status to NOT be present.
         """
@@ -169,7 +164,7 @@ class MPL3115A2:
             time.sleep(0.01)
 
     @property
-    def altitude(self):
+    def altitude(self) -> float:
         """Read the altitude as calculated based on the sensor pressure and
         previously configured pressure at sea-level.  This will return a
         value in meters.  Set the sea-level pressure by updating the
@@ -189,7 +184,7 @@ class MPL3115A2:
         return altitude / 65535.0
 
     @property
-    def temperature(self):
+    def temperature(self) -> float:
         """
         Read the temperature as measured by the sensor in Celsius.
         """
