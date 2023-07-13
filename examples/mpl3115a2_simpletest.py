@@ -10,7 +10,8 @@ i2c = I2C(1, sda=Pin(2), scl=Pin(3))  # Correct I2C pins for RP2040
 mpl = mpl3115a2.MPL3115A2(i2c)
 
 while True:
-    print("Pressure: {:.2f}Hpa".format(mpl.pressure))
-    print("Altitude: {:.2f}mts".format(mpl.altitude))
-    print("Temperature: {:.2f}C".format(mpl.temperature))
+    print(f"Pressure: {mpl.pressure:.2f}Hpa")
+    print(f"Altitude: {mpl.altitude:.2f}mts")
+    print(f"Temperature: {mpl.temperature:.2f}°C")
+    print()
     time.sleep(0.5)

@@ -74,6 +74,8 @@ class MPL3115A2:
 
     .. code-block:: python
 
+        press = mpl3115a2.pressure
+
     """
 
     _device_id = RegisterStruct(_REG_WHOAMI, "B")

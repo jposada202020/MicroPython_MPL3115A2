@@ -20,14 +20,11 @@ authors = [
 urls = {Homepage = "https://github.com/jposada202020/MicroPython_MPL3115A2"}
 keywords = [
     "sensor",
-    "micropython",
     "mpl3115a2",
     "micropython",
     "nxp",
     "temperature",
     "pressure",
-    "mpl3115a2",
-    "sensor",
     "driver",
 ]
 license = {text = "MIT"}

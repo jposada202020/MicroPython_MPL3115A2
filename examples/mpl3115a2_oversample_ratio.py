@@ -15,8 +15,7 @@ while True:
     for oversample_ratio in mpl3115a2.oversample_ratio_values:
         print("Current Oversample ratio setting: ", mpl.oversample_ratio)
         for _ in range(10):
-            press = mpl.pressure
-            print("Pressure: {:.2f}Hpa".format(mpl.pressure))
+            print(f"Pressure: {mpl.pressure:.2f}Hpa")
             print()
             time.sleep(0.5)
         mpl.oversample_ratio = oversample_ratio
